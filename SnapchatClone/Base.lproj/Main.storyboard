@@ -160,10 +160,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionTextField" destination="20I-wM-Pmm" id="TJD-19-Vb3"/>
+                        <outlet property="descriptionTextField" destination="Lyl-aD-7zO" id="oSS-BM-M81"/>
                         <outlet property="imageView" destination="vhK-V7-hh8" id="c6J-jt-BN4"/>
                         <outlet property="nextButton" destination="pjT-R8-WwW" id="i93-sS-QEv"/>
-                        <segue destination="bii-yA-uhH" kind="show" identifier="selcetUserSegue" id="ZNf-gX-8xN"/>
+                        <segue destination="bii-yA-uhH" kind="show" identifier="selectUserSegue" id="ZNf-gX-8xN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UQ-Jq-ikq" userLabel="First Responder" sceneMemberID="firstResponder"/>

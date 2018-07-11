@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseAuth
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet var descriptionTextField: UIView!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
     
@@ -56,15 +57,17 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             if error != nil {
                 print ("we had an error:\(String(describing: error))")
             } else {
-                
-               self.performSegue(withIdentifier: "selcetUserSegue", sender: nil)
+            
+               self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
             }
         })
-        
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! SelectUserViewController
+        nextVC.imageURL = ""
+        nextVC.descrip = descriptionTextField.text!
         
     }
 }

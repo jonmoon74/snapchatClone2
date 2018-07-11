@@ -92,8 +92,8 @@
 			children = (
 				45718D2B20F52D93004D242D /* Models */,
 				45718D2A20F52D8A004D242D /* View Controllers */,
-				457C4D1420E9640E00EE9E9D /* AppDelegate.swift */,
 				457C4D1820E9640E00EE9E9D /* Main.storyboard */,
+				457C4D1420E9640E00EE9E9D /* AppDelegate.swift */,
 				457C4D1B20E9641000EE9E9D /* Assets.xcassets */,
 				457C4D1D20E9641000EE9E9D /* LaunchScreen.storyboard */,
 				457C4D2020E9641000EE9E9D /* Info.plist */,
