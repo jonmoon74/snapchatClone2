@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		452017E920F29BA2009B2B3E /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452017E820F29BA2009B2B3E /* SelectUserViewController.swift */; };
+		45517A5D20F930A40071AC2E /* Snaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45517A5C20F930A40071AC2E /* Snaps.swift */; };
 		45718D2D20F53377004D242D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45718D2C20F53377004D242D /* User.swift */; };
 		457C4D1520E9640E00EE9E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C4D1420E9640E00EE9E9D /* AppDelegate.swift */; };
 		457C4D1720E9640E00EE9E9D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C4D1620E9640E00EE9E9D /* SignInViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		452017E820F29BA2009B2B3E /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
+		45517A5C20F930A40071AC2E /* Snaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snaps.swift; sourceTree = "<group>"; };
 		45718D2C20F53377004D242D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		457C4D1120E9640E00EE9E9D /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457C4D1420E9640E00EE9E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				45718D2C20F53377004D242D /* User.swift */,
+				45517A5C20F930A40071AC2E /* Snaps.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				45C7237820F152B8008BFD2D /* PictureViewController.swift in Sources */,
 				45718D2D20F53377004D242D /* User.swift in Sources */,
 				452017E920F29BA2009B2B3E /* SelectUserViewController.swift in Sources */,
+				45517A5D20F930A40071AC2E /* Snaps.swift in Sources */,
 				457C4D1520E9640E00EE9E9D /* AppDelegate.swift in Sources */,
 				45E9892F20EEB0A00055D270 /* SnapsViewController.swift in Sources */,
 			);

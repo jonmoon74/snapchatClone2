@@ -84,11 +84,24 @@
         <!--Snaps View Controller-->
         <scene sceneID="ujA-cn-ZaG">
             <objects>
-                <viewController id="gEJ-rV-2RH" customClass="SnapsViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gEJ-rV-2RH" customClass="SnapsViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrH-P7-hgj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dD7-h4-xiL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F8r-Tq-bbW" firstAttribute="trailing" secondItem="dD7-h4-xiL" secondAttribute="trailing" id="0Ax-Di-L8Y"/>
+                            <constraint firstItem="dD7-h4-xiL" firstAttribute="leading" secondItem="F8r-Tq-bbW" secondAttribute="leading" id="Gk4-lK-1Wn"/>
+                            <constraint firstItem="dD7-h4-xiL" firstAttribute="centerX" secondItem="hrH-P7-hgj" secondAttribute="centerX" id="IlF-1P-Ibx"/>
+                            <constraint firstItem="dD7-h4-xiL" firstAttribute="top" secondItem="F8r-Tq-bbW" secondAttribute="top" id="ggW-d5-DSq"/>
+                            <constraint firstItem="F8r-Tq-bbW" firstAttribute="bottom" secondItem="dD7-h4-xiL" secondAttribute="bottom" id="z9X-90-c4h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F8r-Tq-bbW"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pv0-A6-aqD">
@@ -103,6 +116,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dD7-h4-xiL" id="qgP-G0-FTb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Tr-Zw-oUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
