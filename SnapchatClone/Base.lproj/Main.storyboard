@@ -118,11 +118,51 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="dD7-h4-xiL" id="qgP-G0-FTb"/>
+                        <segue destination="zeV-hb-HUV" kind="show" identifier="viewSnapSegue" id="pdQ-gz-oHQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Tr-Zw-oUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1545" y="90"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="fiv-E0-XPH">
+            <objects>
+                <viewController id="zeV-hb-HUV" customClass="ViewSnapViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uvN-Wr-YpA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is me saying hello to fill the space" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unr-ac-hOA">
+                                <rect key="frame" x="5" y="636" width="365" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zum-6w-79E">
+                                <rect key="frame" x="10" y="74" width="355" height="552"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Unr-ac-hOA" firstAttribute="top" secondItem="zum-6w-79E" secondAttribute="bottom" constant="10" id="9cx-Qw-I4l"/>
+                            <constraint firstItem="yHZ-dX-tuZ" firstAttribute="trailing" secondItem="Unr-ac-hOA" secondAttribute="trailing" constant="5" id="KFj-wU-3bp"/>
+                            <constraint firstItem="yHZ-dX-tuZ" firstAttribute="bottom" secondItem="Unr-ac-hOA" secondAttribute="bottom" constant="10" id="R78-A3-no3"/>
+                            <constraint firstItem="zum-6w-79E" firstAttribute="leading" secondItem="yHZ-dX-tuZ" secondAttribute="leading" constant="10" id="RAK-KG-VQb"/>
+                            <constraint firstItem="yHZ-dX-tuZ" firstAttribute="trailing" secondItem="zum-6w-79E" secondAttribute="trailing" constant="10" id="SOh-uh-fQ8"/>
+                            <constraint firstItem="Unr-ac-hOA" firstAttribute="leading" secondItem="yHZ-dX-tuZ" secondAttribute="leading" constant="5" id="ljP-KT-3Ng"/>
+                            <constraint firstItem="zum-6w-79E" firstAttribute="top" secondItem="yHZ-dX-tuZ" secondAttribute="top" constant="10" id="rf3-CD-7uh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yHZ-dX-tuZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="zum-6w-79E" id="ciH-NC-IVM"/>
+                        <outlet property="label" destination="Unr-ac-hOA" id="pkx-35-aFb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYK-lW-9c0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="813"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="V6o-J1-ZaU">
