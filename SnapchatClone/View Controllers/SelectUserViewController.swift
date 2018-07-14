@@ -22,8 +22,8 @@ class SelectUserViewController: UIViewController, UITableViewDataSource, UITable
         
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { (snapshot) in
             print(snapshot)

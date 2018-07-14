@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseAuth
+import FirebaseDatabase
+
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -57,7 +59,11 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             if error != nil {
                 print ("we had an error:\(String(describing: error))")
             } else {
-            
+                let imageRef = imagesFolder.child("\(NSUUID().uuidString).jpg")
+//                let imageDownloadURL = imageRef.downloadURL(completion: { (<#URL?#>, <#Error?#>) in
+//                    <#code#>
+//                })
+//                print(imageDownloadURL)
                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
             }
         })
