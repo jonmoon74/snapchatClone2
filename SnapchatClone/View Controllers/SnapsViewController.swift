@@ -33,10 +33,25 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             snap.imageURL = value!["imageURL"] as! String
             snap.from = value!["from"] as! String
             snap.descrip = value!["description"] as! String
+            snap.key = snapshot.key
             
             self.snaps.append(snap)
             self.tableView.reloadData()
         })
+        
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: { (snapshot) in
+            print(snapshot)
+            
+            var index = 0
+            for snap in self.snaps {
+                if snap.key == snapshot.key {
+                    self.snaps.remove(at: index)
+                }
+                index += 1
+            }
+            self.tableView.reloadData()
+        })
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -24,7 +24,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
     }
@@ -38,7 +38,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.dismiss(animated: true, completion: nil)
         
     }
-
+    
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
         imagePicker.sourceType = .savedPhotosAlbum
@@ -53,18 +53,15 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imagesFolder = Storage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         
+
         
         imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil, completion: {(metadata, error) in
             print ("We tried to upload")
             if error != nil {
                 print ("we had an error:\(String(describing: error))")
             } else {
-                let imageRef = imagesFolder.child("\(NSUUID().uuidString).jpg")
-//                let imageDownloadURL = imageRef.downloadURL(completion: { (<#URL?#>, <#Error?#>) in
-//                    <#code#>
-//                })
-//                print(imageDownloadURL)
-               self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+
+                self.performSegue(withIdentifier: "selectUserSegue", sender: nil )
             }
         })
         
@@ -72,6 +69,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! SelectUserViewController
+
         nextVC.imageURL = ""
         nextVC.descrip = descriptionTextField.text!
         
