@@ -26,6 +26,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isEnabled = false
         
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
@@ -36,7 +37,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
-        
+        nextButton.isEnabled = true
         imagePicker.dismiss(animated: true, completion: nil)
         
     }
