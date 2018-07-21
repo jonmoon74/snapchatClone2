@@ -55,16 +55,48 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let imagesFolder = Storage.storage().reference().child("images")
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
         
-
+        //        let storageItem = Storage.storage().reference().child(ImageUid)
+        //        storageItem.putData(ImageData, metadata: metadata) { (metadata, error) in
+        //            if error != nil {
+        //                print("Couldn't Upload Image")
+        //            } else {
+        //                print("Uploaded")
+        //                storageItem.downloadURL(completion: { (url, error) in
+        //                    if error != nil {
+        //                        print(error!)
+        //                        return
+        //                    }
+        //                    if url != nil {
+        //                        self.SetUpUser(Image: url!.absoluteString)
+        //                    }
+        //                }
+        //            }
+        //        }
         
-        imagesFolder.child("\(uuid).jpg").putData(imageData, metadata: nil, completion: {(metadata, error) in
+        
+        
+        
+        
+        imagesFolder.child("\(uuid).jpg").putData(imageData, metadata: metadata, completion: {(metadata, error) in
             print ("We tried to upload")
             if error != nil {
                 print ("we had an error:\(String(describing: error))")
+                return()
             } else {
-
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil )
+                imagesFolder.child("\(self.uuid).jpg").downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print("we had an error:\(String(describing: error))")
+                        return()
+                    }
+                    if url != nil {
+                        print("here is the url: \(String(describing: url)) ########")
+                        self.performSegue(withIdentifier: "selectUserSegue", sender: url!.absoluteString)
+                    }
+                })
+                
             }
         })
         
@@ -72,8 +104,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! SelectUserViewController
-
-        nextVC.imageURL = ""
+        print ("Here is the sender: \(String(describing: sender))")
+        nextVC.imageURL = sender as! String
         nextVC.descrip = descriptionTextField.text!
         nextVC.uuid = uuid
         
